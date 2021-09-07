@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список фильмов</title>
+</head>
+<body>
+<h1>Самые великолепные фильмы по версии друзей:</h1>
+<div th:each="film : ${films}">
+    <p th:text="${film.getName()}"></p>
+    <p th:text="${film.getRating()}"></p>
+    <div th:if="!${film.isRated()}">
+        <select th:id="select + ${film.getId()}">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <input class="btn" type="button" value="Оценить" th:data-index="${film.getId()}">
+        </select>
+    </div>
+</div>
+<div>
+    <b>Ваш любимый фильм:</b><br>
+    <input id="filmName" type="text" size="40">
+    <input id="addFilm" type="button" value="Добавить">
+    <div id="alertContainer"></div>
+</div>
+<a href="/logout">Выйти</a>
+<script src="/js/addRating.js"></script>
+<script src="/js/addFilm.js"></script>
+</body>
+</html>

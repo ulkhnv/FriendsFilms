@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Модерация</title>
+</head>
+<body>
+<div th:each="film : ${films}">
+    <div th:id="container+${film.getId()}" >
+    <p th:text="${film.getName()}"></p>
+    <input class="moderate" type="button" th:data-index="${film.getId()}" value="Одобрить">
+    <input class="delete" type="button" th:data-index="${film.getId()}" value="Удалить">
+    </div>
+</div>
+
+<script src="/js/moderateFilm.js"></script>
+<script src="/js/deleteFilm.js"></script>
+</body>
+</html>
