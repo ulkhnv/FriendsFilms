@@ -14,13 +14,13 @@ public class Film {
     @Column
     private String name;
 
-    @Column(columnDefinition = "double default 0.0")
+    @Column
     private Double rating = 0.0;
 
     @OneToMany(mappedBy = "film")
     private List<FilmRating> ratesOfUsers;
 
-    @Column(columnDefinition = "boolean default false")
+    @Column
     private boolean isModerated = false;
 
     @Transient

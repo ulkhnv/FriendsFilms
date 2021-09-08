@@ -10,8 +10,6 @@ import ulkhnv.model.User;
 import ulkhnv.service.FilmService;
 import ulkhnv.service.RoleService;
 import ulkhnv.service.UserService;
-
-import javax.validation.Valid;
 import java.security.Principal;
 
 
